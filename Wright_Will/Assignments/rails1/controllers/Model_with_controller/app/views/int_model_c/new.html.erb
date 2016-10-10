@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>add a user</title>
+    </head>
+    <body>
+        <form action='/users/create/' method="post">
+            <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+            <input type="text" name="name" value="" placeholder="add a name here">
+            <input type="submit" name="submit" value="submit">
+        </form>
+
+    </body>
+</html>

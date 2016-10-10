@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>edit a user</title>
+    </head>
+    <body>
+        <form action='/users/<%= @user[:id] %>/update' method="post">
+            <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+            <input type="text" name="name" value="<%= @user[:name] %>">
+            <input type="submit" name="submit" value="submit">
+        </form>
+
+    </body>
+</html>
