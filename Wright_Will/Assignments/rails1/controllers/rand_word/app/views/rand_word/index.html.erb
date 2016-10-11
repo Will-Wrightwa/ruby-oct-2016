@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>random word</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="container">
+                <h4>random word (attempt: #<%= session[:count] %></h4>
+
+                <div class="jumbotron">
+                    <h1><%= @rand %></h1>
+                </div>
+                <a href="/" class="btn">generate</a>
+                <a href="/reset" class="btn">reset</a>
+            </div>
+
+        </div>
+    </body>
+</html>
