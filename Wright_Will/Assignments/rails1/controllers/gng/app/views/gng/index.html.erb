@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>great number game</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome to the great Number Game!</h1>
+            <h4>I am thinking of a number between 1 and 100</h4>
+            <h4>Take a guess</h4>
+            <div class="<%= session[:color] %>">
+
+                <% unless session[:state] == 'correct'  || session[:state] == '' %>
+                    <h1> <%= session[:state] %> </h1>
+                <% end %>
+
+                <% if session[:state] == 'correct' %>
+                    <h1><%= session[:num] %> was the number</h1>
+                    <a href="/reset" class="btn">play again?</a>
+                <% end %>
+
+            </div>
+            <% unless session[:state] == 'correct' %>
+            <form class="" action="/guess" method="post">
+                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                <input type="text" name="guess" value="" >
+                <input type="submit" name="submit" value="Guess">
+            </form>
+            <% end %>
+        </div>
+
+    </body>
+</html>
